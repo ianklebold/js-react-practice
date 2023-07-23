@@ -32,3 +32,9 @@ FirstApp.propTypes = {
     title : PropTypes.string.isRequired,
     subtitle : PropTypes.number
 }
+
+//Con el defaultProps podemos valores por default a las props
+FirstApp.defaultProps = {
+    title : 'No hay titulo',
+    subtitle : 500
+}
