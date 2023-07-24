@@ -4,6 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {FirstApp} from './FirstApp';
 import {HelloWorldApp} from './HelloWorldApp';
+import {CounterApp} from './CounterApp';
 
 //Este estilo se aplica globalmente
 import './styles.css';
@@ -15,5 +16,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <FirstApp title = "Nuevo componente" subtitle = {123}/>
         <HelloWorldApp />
+        <CounterApp value={0}/>
     </React.StrictMode>
 );
