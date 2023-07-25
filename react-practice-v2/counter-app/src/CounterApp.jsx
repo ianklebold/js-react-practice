@@ -4,11 +4,15 @@ import PropTypes from 'prop-types';
 //El evento onClick es el que permite aumentar el valor de value. En {} va js
 export const CounterApp = ({value}) => {
 
-    //Cuando el estado counter cambia entonces react renderiza el componente
+    //El renderizado se da cuando el componente cambia de estado, por lo que por cada cambio
+    //Todo este componente volvera a ser ejecutado. Cuidado por que podrias hacer llamadas a APIs
+    //Consultas a BD, etc, por cad avez que cambies de estado tu componente.
+    console.log("Renderizando");
+    
 
+    //Cuando el estado counter cambia entonces react renderiza el componente
     //Desestructuracion de arreglo
     const [ counter,setCounter   ] = useState(value); //Returns a stateful value, and a function to update it.
-
     const incValue = () => {
         //Se pasa la constante counter y la funcion setCounter se encarga de modificarlo
         setCounter(counter + 1); 
@@ -16,6 +20,10 @@ export const CounterApp = ({value}) => {
 
     const restartValue = () => {
         setCounter(counter - counter);
+    };
+
+    const restValue = () => {
+        setCounter(counter - 1);
     };
 
     return (
@@ -28,6 +36,9 @@ export const CounterApp = ({value}) => {
             </button>
             <button onClick={restartValue}>
                 R
+            </button>
+            <button onClick={restValue}>
+                -1
             </button>
         </>
     );
