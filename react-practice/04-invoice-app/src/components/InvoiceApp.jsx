@@ -31,7 +31,29 @@ export const InvoiceApp = () => {
             </ul>
 
             <h4>Productos de la factura</h4>
-            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                    <tbody>
+                    { 
+                        //Mapeamos un objeto por un html
+                        invoice.items.map(item => {
+                            return (
+                                <tr key = {item.id}>
+                                    <td>{item.product}</td>
+                                    <td>{item.price}</td>
+                                    <td>{item.quantity}</td>
+                                </tr>
+                            );
+                        }) 
+                    }
+                    </tbody>
+                </thead>
+            </table>
         </>
     );
 };
