@@ -4,6 +4,10 @@ export const InvoiceApp = () => {
 
     const invoice = getInvoice();
 
+    const {name, lastname, address} = invoice.client;
+
+    const {country, city, street, number} = address;
+
     return(
         <>
             <h1>Ejemplo factura</h1>
@@ -11,6 +15,23 @@ export const InvoiceApp = () => {
                 <li>Id : { invoice.id }</li>
                 <li>Name : { invoice.name }</li>
             </ul>
+
+            <h3>Datos del cliente</h3>
+            <ul>
+                <li> {name} {lastname}</li>
+                <li> {country}</li>
+                <li> {city}</li>
+                <li> {street} {number}</li>
+            </ul>
+
+            <h3>Datos de la empresa</h3>
+            <ul>
+                <li>{invoice.company?.name}</li>
+                <li>{invoice.company?.fiscalNumber}</li>
+            </ul>
+
+            <h4>Productos de la factura</h4>
+            
         </>
     );
 };
